@@ -1,4 +1,5 @@
 start:
+	taskkill /F /IM air.exe /T
 	air
 
 setup-win:
