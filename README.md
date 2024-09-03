@@ -33,13 +33,24 @@ make setup-win
 
 This will use curl and do the aforementioned steps automatically
 
-Finnaly, you can run:
+Finally, you can run:
 
 ```bash
 make start
 ```
 
+or 
+
+```bash
+air 
+```
+
 This will run Air, a dependency that will check for file changes and reload the webpage, although not as fast as `Live Server`. 
+
+## ❌Known issues
+
+- Sometimes the Air server just breaks because there are more than one process that uses port 4000 => you can interrupt it and rerun it again. (I am trying to make a post_cmd `taskkill /F /IM air.exe /T` to kill all air.exe processes before rerunning)
+- Speed is not a thing for this template, it usually takes me about 4-5 secs before the web changes and have to manually hit reload (eventhough proxy=true)
 
 ## 📫 Feedbacks
 If you have any problems, feel free to open an issue. Thank you for your time...
