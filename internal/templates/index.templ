@@ -1,5 +1,7 @@
 package templates
 
+import "github.com/zeann3th/htmx+tailwind/internal/templates/components"
+
 
 templ Index() {
 <html>
@@ -13,6 +15,7 @@ templ Index() {
 </head>
 
 <body>
+  @components.Nav()
 </body>
 
 </html>

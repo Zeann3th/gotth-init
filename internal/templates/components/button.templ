@@ -1,6 +1,5 @@
 package components
 
-
-templ Button(label, styling string, htmx templ.Attributes) {
-<button type="button" { htmx... } class={ styling }>{ label }</button>
+templ Button(label string, attr templ.Attributes) {
+<button type="button" { attr... }>{ label }</button>
 }
