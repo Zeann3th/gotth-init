@@ -8,7 +8,7 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func TextBox(text string, attr templ.Attributes) templ.Component {
+func Hero() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
@@ -26,28 +26,7 @@ func TextBox(text string, attr templ.Attributes) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<span")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templ.RenderAttributes(ctx, templ_7745c5c3_Buffer, attr)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(text)
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `internal/templates/components/textbox.templ`, Line: 4, Col: 24}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><div class=\"my-32 mx-32 px-32 flex flex-col justify-between items-start gap-y-8\"><span class=\"mt-8 mb-16 text-white text-8xl font-bold\">Make Your Software<br>Vision a Reality</span> <span class=\"text-white font-bold text-5xl\">Pro tools created with <a href=\"#for-developers\" class=\"text-purple-600 underline hover:text-white\">&#123;developers&#125;</a>,<br><a href=\"#for-teams\" class=\"text-cyan-400 underline hover:text-white\">teams</a>, and <a href=\"#for-businesses\" class=\"text-pink-400 underline hover:text-white\">businesses</a> in mind</span></div></section><section id=\"for-developers\" class=\"bg-cyan-900 h-[400px]\"></section><section id=\"for-teams\" class=\"bg-orange-600 h-[400px]\"></section><section id=\"for-businesses\" class=\"bg-green-600 h-[400px]\"></section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

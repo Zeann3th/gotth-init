@@ -28,7 +28,7 @@ func Index() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html><head><meta charset=\"UTF-8\"><title>GoTTH</title><link href=\"/css/output.css\" rel=\"stylesheet\"><script src=\"https://kit.fontawesome.com/1761c236e1.js\" crossorigin=\"anonymous\"></script><script src=\"https://unpkg.com/htmx.org/dist/htmx.js\"></script></head><body>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html class=\"scroll-smooth\"><head><meta charset=\"UTF-8\"><title>JetBrains: Essential tools for software developers and teams</title><link href=\"/css/output.css\" rel=\"stylesheet\"><script src=\"https://kit.fontawesome.com/1761c236e1.js\" crossorigin=\"anonymous\"></script><script src=\"https://unpkg.com/htmx.org/dist/htmx.js\"></script></head><body class=\"bg-black\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -36,7 +36,15 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"bg-cyan-400 w-screen h-[400px]\"></section><section class=\"bg-green-400 w-screen h-[400px]\"></section><section class=\"bg-pink-400 w-screen h-[400px]\"></section><section class=\"bg-orange-500 w-screen h-[400px]\"></section></body></html>")
+		templ_7745c5c3_Err = components.Hero().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = components.More().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

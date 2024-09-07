@@ -2,12 +2,9 @@ package main
 
 import (
 	"context"
-	"strconv"
 
-	"github.com/a-h/templ"
 	"github.com/labstack/echo/v4"
 	"github.com/zeann3th/htmx+tailwind/internal/templates"
-	"github.com/zeann3th/htmx+tailwind/internal/templates/components"
 )
 
 var userCount = 0
@@ -17,14 +14,6 @@ func main() {
 
 	e.GET("/", func(c echo.Context) error {
 		return templates.Index().Render(context.Background(), c.Response().Writer)
-	})
-
-	e.POST("/count", func(c echo.Context) error {
-		userCount++
-		return components.TextBox(strconv.Itoa(userCount), templ.Attributes{
-			"id":   "count",
-			"name": "count",
-		}).Render(context.Background(), c.Response().Writer)
 	})
 
 	e.Static("/assets", "/internal/assets")
